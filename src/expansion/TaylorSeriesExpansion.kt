@@ -1,18 +1,16 @@
 package expansion
 
-
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.pow
 import kotlin.math.sin
-
 
 fun main(args: Array<String>) {
 
     try {
         getSin()
     } catch (exc: Exception) {
-        println("Coś się popsuło, włącz ponownie")
+        println("Coś się popsuło, włącz program ponownie")
     }
 }
 
@@ -38,17 +36,17 @@ fun getSin() {
             continue
         }
 
-        var value = input.toDouble()
+        var argument = input.toDouble()
         if (optionNumber == 2) {
-            value = getRadiansFrom(value)
+            argument = getRadiansFrom(argument)
         } else if (optionNumber != 1) {
             println("Wybierz 1 lub 2 !!!")
             continue
         }
 
-        value = getAccurateRadian(value)
-        val result = getSinValue(value)
-        val libraryResult = sin(value)
+        argument = getAccurateRadian(argument)
+        val result = getSinByTaylorExpansion(argument)
+        val libraryResult = sin(argument)
 
         println("Wynik ekspansji po 10 wyrazach: $result")
         println("Wynik wbudowanej bibloteki: $libraryResult")
@@ -84,7 +82,7 @@ fun approx(x: Double): Double {
     return reducedX
 }
 
-fun getSinValue(radians: Double): Double {
+fun getSinByTaylorExpansion(radians: Double): Double {
     val oddSigns = arrayOf(3, 5, 7, 9)
     var sinResult = radians
     var isPlusSign = false
