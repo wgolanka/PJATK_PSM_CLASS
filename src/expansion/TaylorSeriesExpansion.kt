@@ -101,12 +101,12 @@ fun getSinByTaylorExpansion(radians: Double): Double {
 
 fun nextSign(value: Double, times: Int): Double {
     val counter = value.pow(times)
-    val denominator = strong(times)
+    val denominator = factorial(times)
     print("$times: $counter/$denominator\n")
     return counter / denominator
 }
 
-fun strong(value: Int): Int {
+fun factorial(value: Int): Int {
     var result = 1
     for (x in 2..value) {
         result *= x
