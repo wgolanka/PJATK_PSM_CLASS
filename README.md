@@ -1,2 +1,2 @@
-This is for PSM classes at PJATK
-this is my last semester and IDC anymore
+Aby odpalić z konsoli
+https://kotlinlang.org/docs/tutorials/command-line.html
